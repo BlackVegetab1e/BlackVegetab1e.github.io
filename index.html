@@ -24,8 +24,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>EASI: Evolutionary Adversarial Simulator Identification for Sim-to-Real Transfer</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,6 +43,18 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MathJax Configuration -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
 </head>
 <body>
 
@@ -52,28 +64,35 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">EASI: Evolutionary Adversarial Simulator
+              Identification for Sim-to-Real Transfer</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a>Haoyu Dong</a></span>,
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a>Huiqiao Fu</a></span>,
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a>Wentao Xu</a>,
+                  </span>
+                  <span class="author-block">
+                    <a>Zhehao Zhou</a>,
+                  </span>
+                  <span class="author-block">
+                    <a>Chunlin Chen</a>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Nanjing University<br>NeurIPS 2024</span>
+     
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="static/pdfs/EASI_Evolutionary_Adversarial_Simulator_Identification_for_Sim_to_Real_Transfer.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -82,20 +101,11 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+                   
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/BlackVegetab1e/EASI" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -123,22 +133,7 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
+
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -148,7 +143,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Reinforcement Learning (RL) controllers have demonstrated remarkable performance in complex robot control tasks. 
+            However, the presence of reality gap often leads to poor performance when deploying policies trained in simulation directly onto real robots. 
+            Previous sim-to-real algorithms like Domain Randomization (DR) requires domain-specific expertise and suffers from issues such as reduced control
+             performance and high training costs. In this work, we introduce Evolutionary Adversarial Simulator Identification (EASI), a novel approach that 
+             combines Generative Adversarial Network (GAN) and Evolutionary Strategy (ES) to address sim-to-real challenges. Specifically, we consider the problem 
+             of sim-to-real as a search problem, where ES acts as a generator in adversarial competition with a neural network discriminator, aiming to find 
+             physical parameter distributions that make the state transitions between simulation and reality as similar as possible. The discriminator serves 
+             as the fitness function, guiding the evolution of the physical parameter distributions. EASI features simplicity, low cost, and high fidelity, 
+             enabling the construction of a more realistic simulator with minimal requirements for real-world data, thus aiding in transferring simulated-trained 
+             policies to the real world. We demonstrate the performance of EASI in both sim-to-sim and sim-to-real tasks, showing superior performance compared to existing sim-to-real algorithms.
           </p>
         </div>
       </div>
@@ -158,101 +162,124 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
+<!-- Paper poster -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+      <h2 class="title">EASI</h2>
+      
+      <p style="font-size: 18px;">
+        Our goal is to find a parameter distribution for simulator (e.g. Gaussian distribution) that makes the simulator most similar to the realworld.
+        The distance between simulator and reality is measured by a discriminator $D(\mathbf{s}, \mathbf{a}, \mathbf{s}')$ and trained by:
+        $$ 
+        \mathop{\max}\limits_{D} \mathbb{E}_{d^{\mathcal{M}}(\mathbf{s}, \mathbf{a}, \mathbf{s}')}[D(\mathbf{s}, \mathbf{a}, \mathbf{s}')] - \mathbb{E}_{d^{\mathcal{B}}(\mathbf{s}, \mathbf{a}, \mathbf{s}')}][D(\mathbf{s}, \mathbf{a}, \mathbf{s}')].
+       $$
+    </p>
+
+
+
+
+
+      <div class="has-text-centered">
+        <img src="static/images/EASI.png" alt="MY ALT TEXT" style="max-width: 50%; height: auto;"/>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        Schematic overview of EASI. ES acts as a generator in adversarial competition with a
+neural network discriminator distinguishing between simulation and reality state transitions. The discriminator serves as the fitness function, guiding the evolution of the physical parameter distributions.
       </h2>
+
+
+
+        
+      </div>
     </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+  </section>
+<!--End paper poster -->
 
 
-
-
-<!-- Youtube video -->
+<!-- Paper poster -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <h2 class="title">Sim-to-real policy transfer</h2>
+
+      
+
+
+      <div class="has-text-centered">
+        <img src="static/images/Go2_run.png" alt="MY ALT TEXT" style="max-width: 70%; height: auto;"/>
+      </div>
+
+      
+
+      <div class="has-text-centered">
+        <img src="static/images/go2_exp.png" alt="MY ALT TEXT" style="max-width: 70%; height: auto;"/>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        After parameter search with EASI, the simulation become more realistic. In this experiment, we use the same initial policy and 
+      speed command (v=1.4m/s) to control the robot's movement in both simulation and reality environments and plot the frequency spectrum 
+      of the robot's joint movements. Training in EASI optimized simulator, the robot's ability to follow speed commands is improved. 
+      </h2>
+
+      <section class="hero teaser">
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <div class="has-text-centered"><video style="max-width: 70%; height: auto;" controls>
+              <source src="static/videos/Go2_EASI_sim2real.mp4" type="video/mp4">
+            </video></div>
+            
+            <h2 class="subtitle has-text-centered">
+              Introduction to EASI's sim-to-real experiments on the quadruped robot, Unitree Go2.
+            </h2>
           </div>
         </div>
-      </div>
+      </section>
+      <!-- End teaser video -->
     </div>
-  </div>
-</section>
-<!-- End youtube video -->
+  </section>
+<!--End paper poster -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
+
+
+
+
+
+<section class="hero is-small ">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
+      <h2 class="title">Sim-to-sim policy transfer</h2>
+
+      <div class="has-text-centered">
+        <img src="static/images/param_all.png" alt="MY ALT TEXT" style="max-width: 50%; height: auto;"/>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        Evolution process of parameters. WD means target parameter within initial parameter distribution, OOD means target parameter out of initial parameter distribution.
+      </h2>
+      
+
+
+
+
+      <div class="has-text-centered">
+        <img src="static/images/train.png" alt="MY ALT TEXT" style="max-width: 50%; height: auto;"/>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        The performance of policy on the pseudo-real environment over the process of training. 
+        
+        The X-axis represents the number of optimization steps for the policy during training in the simulation, while the Y-axis indicates the policy's performance when tested in pseudo-real world.
+        
+      </h2>
+
+
+     
+        
       </div>
     </div>
-  </div>
-</section>
-<!-- End video carousel -->
+  </section>
+<!--End paper poster -->
+
+
 
 
 
@@ -260,7 +287,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,18 +297,11 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
+
 
 
   <footer class="footer">
